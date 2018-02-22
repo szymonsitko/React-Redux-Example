@@ -28,3 +28,16 @@ export const addCurrencyReport = (curr) => {
             });
     }
 }
+
+export const setSelectedReport = (curr) => {
+  return {
+    type: types.SET_SELECTED_DATA,
+    payload: curr
+  }
+}
+
+export const deleteSelectedReport = () => {
+  return {
+    type: types.DELETE_SELECTED_DATA
+  }
+}
