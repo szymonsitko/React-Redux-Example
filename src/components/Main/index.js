@@ -4,9 +4,10 @@ Redux container, and should be placed below the 'Add' layout
 inside of *this* component. */
 
 import React, { Component } from 'react';
-import { Row } from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 
 import Add from '@containers/Add';
+import Delete from '@containers/Delete';
 import Reports from '@containers/Reports';
 
 import './index.css';
@@ -16,8 +17,10 @@ class Main extends Component {
         return (
             <div className="main">
                 <Row>
-                    <Add /> 
-                    {/* 'Delete' container here! Also read -> 1) */}
+                    <Col s={4} className='grid-example prettier'>
+                      <Add />
+                      <Delete />
+                    </Col>
                     <Reports />
                 </Row>
             </div>

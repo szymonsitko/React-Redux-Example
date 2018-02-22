@@ -10,16 +10,20 @@ import Loading from '@components/Loading';
 
 class Reports extends Component {
     renderListOfReports() {
-        return (            
+        return (
             <div className="prettier">
                 <h5>List of reports</h5>
                 <hr />
-                
+
                 {!this.props.reports.reportsList.length ? 
                     <p>Nothing to display yet.</p>
                     :
                     this.props.reports.reportsList.map((eachReport, index) => {
-                        return <Report key={index} report={eachReport} />
+                        return (
+                          <div key={index} onClick={() => { this.props.setSelectedReport(eachReport) }}>
+                            <Report report={eachReport} active={eachReport === this.props.reports.selected} />
+                          </div>
+                        );
                     })
                 }
             </div>
@@ -37,10 +41,10 @@ class Reports extends Component {
 
 const mapStateToProps = state => {
     return {
-        reports: state.reports
+        reports: state.reports,
     }
 }
-  
+
   const mapDispatchToProps = dispatch => {
     return bindActionCreators(
         ActionCreators,
