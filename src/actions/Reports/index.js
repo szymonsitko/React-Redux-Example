@@ -5,7 +5,7 @@ export const toggleFetchingStatus = () => {
     return {
         type: types.TOGGLE_FETCHING_STATUS
     }
-}
+};
 
 export const setCurrenciesReport = (curr, data) => {
     return {
@@ -15,7 +15,7 @@ export const setCurrenciesReport = (curr, data) => {
             "rate": data.rates[curr.secondCurrency]
         })
     }
-}
+};
 
 export const addCurrencyReport = (curr) => {
     return dispatch => {
@@ -27,4 +27,18 @@ export const addCurrencyReport = (curr) => {
                 dispatch(toggleFetchingStatus());
             });
     }
-}
+};
+
+export const setActiveReport = (curr) => {
+    return {
+        type: types.SET_ACTIVE_REPORT,
+        payload: curr
+    }
+};
+
+
+export const deleteActiveReport = () => {
+    return {
+        type: types.DELETE_ACTIVE_REPORT
+    }
+};

@@ -1,18 +1,20 @@
 import React from 'react';
 
-const Report = props => {
+import './index.css'
+
+const Report = ({active, report, handleSelection}) => {
     return (
-        <div className="single-raport">
+        <div className={"single-report" + (active ? " selected-report" : "")} onClick={() => handleSelection(report)}>
             <h6>
-                Raport for convertion from 
-                    <span className="bold"> {props.report.firstCurrency} </span>
-                    to 
-                    <span className="bold"> {props.report.secondCurrency} </span>
+                Raport for convertion from
+                <span className="bold"> {report.firstCurrency} </span>
+                to
+                <span className="bold"> {report.secondCurrency} </span>
             </h6>
-            <h5>Rate: <span className="bold">{props.report.rate}</span></h5>
-            <p>Created at: {new Date(props.report.created).toString()}</p>
+            <h5>Rate: <span className="bold">{report.rate}</span></h5>
+            <p>Created at: {new Date(report.created).toString()}</p>
         </div>
     )
-}
+};
 
 export default Report;

@@ -9,8 +9,8 @@
       npm install --save redux react-redux redux-thunk redux-logger
 
 */
-import { createStore, applyMiddleware, compose } from 'redux';
-import { createLogger } from 'redux-logger';
+import {applyMiddleware, compose, createStore} from 'redux';
+import {createLogger} from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 
 import appReducers from '@reducers';

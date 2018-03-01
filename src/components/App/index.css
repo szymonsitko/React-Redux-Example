@@ -5,3 +5,15 @@ Footer {
     width: 100%;
     overflow:hidden;
 }
+
+nav, footer.page-footer {
+    background-color: forestgreen;
+}
+
+.btn, .btn:focus {
+    background-color: crimson;
+}
+
+.btn:hover, .btn:active {
+    background-color: firebrick;
+}
