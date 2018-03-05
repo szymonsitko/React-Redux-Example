@@ -7,17 +7,21 @@ import React, { Component } from 'react';
 import { Row } from 'react-materialize';
 
 import Add from '@containers/Add';
+import Delete from '@containers/Delete';
 import Reports from '@containers/Reports';
 
 import './index.css';
 
 class Main extends Component {
     render() {
+        console.log(this.props);
         return (
             <div className="main">
                 <Row>
-                    <Add /> 
-                    {/* 'Delete' container here! Also read -> 1) */}
+                    <Add />
+                    <Delete />
+                </Row>
+                <Row>
                     <Reports />
                 </Row>
             </div>

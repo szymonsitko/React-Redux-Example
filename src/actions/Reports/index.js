@@ -28,3 +28,20 @@ export const addCurrencyReport = (curr) => {
             });
     }
 }
+
+export const selectCurrencyReport = (report) => {
+    return dispatch => {
+        dispatch({
+            type: types.SELECT_REPORT,
+            payload: report
+        });
+    }
+}
+
+export const deleteSelectedReport = () => {
+    return dispatch => {
+        dispatch({
+            type: types.DELETE_REPORT
+        })
+    }
+}

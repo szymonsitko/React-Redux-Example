@@ -1,8 +1,11 @@
 import React from 'react';
 
+import './index.css';
+
 const Report = props => {
+    console.log(props.active);
     return (
-        <div className="single-raport">
+        <div className={"single-raport " + (props.active && "active") }>
             <h6>
                 Raport for convertion from 
                     <span className="bold"> {props.report.firstCurrency} </span>
