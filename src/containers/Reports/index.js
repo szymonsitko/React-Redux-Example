@@ -1,25 +1,29 @@
-import React, { Component } from 'react';
-import { Col } from 'react-materialize';
+import React, {Component} from 'react';
+import {Col} from 'react-materialize';
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { ActionCreators } from '@actions';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {ActionCreators} from '@actions';
 
 import Report from '@components/Report';
 import Loading from '@components/Loading';
 
 class Reports extends Component {
     renderListOfReports() {
-        return (            
+        return (
             <div className="prettier">
                 <h5>List of reports</h5>
-                <hr />
-                
-                {!this.props.reports.reportsList.length ? 
+                <hr/>
+
+                {!this.props.reports.reportsList.length ?
                     <p>Nothing to display yet.</p>
                     :
                     this.props.reports.reportsList.map((eachReport, index) => {
-                        return <Report key={index} report={eachReport} />
+                        return (
+                            <div key={index} onClick={() => this.props.selectCurrencyReport(eachReport)}>
+                                <Report report={eachReport} active={eachReport === this.props.reports.selected}/>
+                            </div>
+                        )
                     })
                 }
             </div>
@@ -29,7 +33,7 @@ class Reports extends Component {
     render() {
         return (
             <Col s={8} className='grid-example'>
-                {this.props.reports.fetchingReport ? <Loading /> : this.renderListOfReports()}
+                {this.props.reports.fetchingReport ? <Loading/> : this.renderListOfReports()}
             </Col>
         )
     }
@@ -40,8 +44,8 @@ const mapStateToProps = state => {
         reports: state.reports
     }
 }
-  
-  const mapDispatchToProps = dispatch => {
+
+const mapDispatchToProps = dispatch => {
     return bindActionCreators(
         ActionCreators,
         dispatch
