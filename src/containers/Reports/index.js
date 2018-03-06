@@ -19,7 +19,7 @@ class Reports extends Component {
                     <p>Nothing to display yet.</p>
                     :
                     this.props.reports.reportsList.map((eachReport, index) => {
-                        return <Report key={index} report={eachReport} />
+                        return <Report key={index} report={eachReport} handleClick={this.props.setSelectedReport.bind(this, eachReport)}/>
                     })
                 }
             </div>

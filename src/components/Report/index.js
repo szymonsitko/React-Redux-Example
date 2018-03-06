@@ -2,7 +2,7 @@ import React from 'react';
 
 const Report = props => {
     return (
-        <div className="single-raport">
+        <div className="single-raport" onClick={props.handleClick}>
             <h6>
                 Raport for convertion from 
                     <span className="bold"> {props.report.firstCurrency} </span>
