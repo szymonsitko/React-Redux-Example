@@ -25,18 +25,16 @@ class Add extends Component {
     }
 
     render () {
-        return (
-            <Col s={4} className='grid-example prettier'>
-                <div className="prettier">
-                    <h5>Add new comparison</h5>
-                    <hr />
-                    <div>
-                        <p>First currency: <span className="bold">{this.firstCurrency}</span></p>
-                        <p>Second currency: <span className="bold">{this.secondCurrency}</span></p>
-                    </div>
-                    <Button onClick={this.handleButtonClick.bind(this)}>Add</Button>
+        return (            
+            <div className="prettier">
+                <h5>Add new comparison</h5>
+                <hr />
+                <div>
+                    <p>First currency: <span className="bold">{this.firstCurrency}</span></p>
+                    <p>Second currency: <span className="bold">{this.secondCurrency}</span></p>
                 </div>
-            </Col>
+                <Button onClick={this.handleButtonClick.bind(this)}>Add</Button>
+            </div>           
         )
     }
 }

@@ -12,7 +12,8 @@ export const setCurrenciesReport = (curr, data) => {
         type: types.SET_CURRENCIES_DATA,
         payload: extendObject(curr, {
             "created": Date.now(),
-            "rate": data.rates[curr.secondCurrency]
+            "rate": data.rates[curr.secondCurrency],
+            "selected": false
         })
     }
 }
@@ -26,5 +27,19 @@ export const addCurrencyReport = (curr) => {
                 dispatch(setCurrenciesReport(curr, data));
                 dispatch(toggleFetchingStatus());
             });
+    }
+}
+
+export const setSelectedReport = (report) => {
+    return {
+        type: types.SET_SELECTED_REPORT,
+        id: report.created
+    }
+}
+
+export const deleteSelectedReport = (report) => {
+    return {
+        type: types.DELETE_SELECTED_REPORT,
+        id: report.created
     }
 }
