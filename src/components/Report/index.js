@@ -1,12 +1,16 @@
 import React from 'react';
+import './index.css';
 
 const Report = props => {
     return (
-        <div className="single-raport">
+        <div
+            className={`single-raport ${props.active && 'active'}`}
+            onClick={props.onClick}
+        >
             <h6>
-                Raport for convertion from 
+                Raport for convertion from
                     <span className="bold"> {props.report.firstCurrency} </span>
-                    to 
+                    to
                     <span className="bold"> {props.report.secondCurrency} </span>
             </h6>
             <h5>Rate: <span className="bold">{props.report.rate}</span></h5>

@@ -7,6 +7,19 @@ export const toggleFetchingStatus = () => {
     }
 }
 
+export const deleteSeletedReport = () => {
+    return {
+        type: types.DELETE_REPORT
+    }
+}
+
+export const setActiveIndex = (index) => {
+    return {
+        type: types.SET_ACTIVE_INDEX,
+        payload: index
+    }
+}
+
 export const setCurrenciesReport = (curr, data) => {
     return {
         type: types.SET_CURRENCIES_DATA,
